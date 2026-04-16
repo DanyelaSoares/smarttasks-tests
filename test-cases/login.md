@@ -50,7 +50,7 @@ Validar comportamento ao informar senha incorreta
 3. Informar senha incorreta
 
 **Resultado esperado:**
-- Status 401 ou 403
+- Status 401 (Unauthorized)
 - Mensagem de erro
 
 ---
