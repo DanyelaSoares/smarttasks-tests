@@ -26,7 +26,7 @@ Validar se o usuário consegue se cadastrar com dados válidos
 4. Informar senha válida
 
 **Resultado esperado:**
-- Status 200 (ou 201)
+- Status 201 (Created)
 - Usuário cadastrado com sucesso
 - Retorno com dados do usuário (ou mensagem de sucesso)
 
