@@ -13,9 +13,9 @@ Validar se o usuário consegue se cadastrar com dados válidos
 **Dados de teste:**
 ```json
 {
-  "name": "Dani",
+  "nome": "Dani",
   "email": "dani@teste.com",
-  "password": "123456"
+  "senha": "123456"
 }
 ```
 
@@ -35,7 +35,7 @@ Validar se o usuário consegue se cadastrar com dados válidos
 ## ❌ Cadastro com email duplicado
 
 **Objetivo:**  
-Validar comportamento ao tentar cadastrar um email já existente
+Validar comportamento ao tentar cadastrar um email já existente.
 
 **Dados de teste:**
 ```json
@@ -51,9 +51,9 @@ Validar comportamento ao tentar cadastrar um email já existente
 2. Informar email já cadastrado
 
 **Resultado esperado:**
-- Status esperado: 400, conforme validação de campos implementada
+- Status 409 (Conflict)
 - Mensagem informando que o email já está em uso
-
+  
 ---
 
 ## ❌ Cadastro com email em formato inválido
