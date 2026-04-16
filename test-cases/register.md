@@ -51,7 +51,7 @@ Validar comportamento ao tentar cadastrar um email já existente
 2. Informar email já cadastrado
 
 **Resultado esperado:**
-- Status 400 (ou conforme regra da API)
+- Status esperado: 400, conforme validação de campos implementada
 - Mensagem informando que o email já está em uso
 
 ---
