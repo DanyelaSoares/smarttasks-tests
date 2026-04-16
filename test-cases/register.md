@@ -40,9 +40,9 @@ Validar comportamento ao tentar cadastrar um email já existente
 **Dados de teste:**
 ```json
 {
-  "name": "Dani",
+  "nome": "Dani",
   "email": "dani@teste.com",
-  "password": "123456"
+  "senha": "123456"
 }
 ```
 
@@ -64,9 +64,9 @@ Validar comportamento ao informar email em formato inválido
 **Dados de teste:**
 ```json
 {
-  "name": "Dani",
-  "email": "email_invalido",
-  "password": "123456"
+  "nome": "Dani",
+  "email": "dani@teste.com",
+  "senha": "123456"
 }
 ```
 
@@ -88,9 +88,9 @@ Validar comportamento ao enviar campos vazios
 **Dados de teste:**
 ```json
 {
-  "name": "",
+  "nome": "",
   "email": "",
-  "password": ""
+  "senha": ""
 }
 ```
 
@@ -112,9 +112,9 @@ Validar regras mínimas de senha (se aplicável)
 **Dados de teste:**
 ```json
 {
-  "name": "Dani",
+  "nome": "Dani",
   "email": "dani@teste.com",
-  "password": "123"
+  "senha": "123"
 }
 ```
 
