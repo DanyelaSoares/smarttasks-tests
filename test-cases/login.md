@@ -61,7 +61,7 @@ Validar comportamento ao informar senha incorreta
 Validar comportamento ao informar usuário não cadastrado
 
 **Dados de teste:**
-```json
+```json    
 {
   "email": "naoexiste@teste.com",
   "senha": "123456"
@@ -73,8 +73,8 @@ Validar comportamento ao informar usuário não cadastrado
 3. Informar senha qualquer
 
 **Resultado esperado:**
-- Status 401 ou 403
-- Mensagem de erro
+- Status 401 (Unauthorized)
+- Mensagem informando credenciais inválidas      
 
 ## ⚠️ Campos obrigatórios
 
@@ -87,12 +87,12 @@ Validar comportamento ao enviar campos vazios
   "email": "",
   "senha": ""
 }
-```
+```   
 
 **Passos:**
 1. Enviar requisição POST `/auth/login`
 2. Deixar campos vazios
 
 **Resultado esperado:**
-- Status 400 (ou conforme regra da API)
-- Mensagem informando campos obrigatórios
+- Status 401 (Unauthorized)
+- Mensagem informando credenciais inválidas   
