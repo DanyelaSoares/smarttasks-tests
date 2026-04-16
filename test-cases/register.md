@@ -56,27 +56,28 @@ Validar comportamento ao tentar cadastrar um email já existente
 
 ---
 
-## ❌ Cadastro com email inválido
+## ❌ Cadastro com email em formato inválido
 
 **Objetivo:**  
-Validar comportamento ao informar email em formato inválido
+Validar o comportamento da API ao informar email em formato inválido.
 
 **Dados de teste:**
 ```json
 {
   "nome": "Dani",
-  "email": "dani@teste.com",
+  "email": "email_invalido",
   "senha": "123456"
 }
 ```
 
 **Passos:**
 1. Enviar requisição POST `/auth/register`
-2. Informar email inválido
+2. Informar email em formato inválido
 
 **Resultado esperado:**
-- Status 400
-- Mensagem informando formato inválido
+- Comportamento atual: cadastro permitido (sem validação de formato)
+- Observação: a API não possui validação de formato de email implementada
+- Sugestão de melhoria: implementar validação para garantir formato válido
 
 ---
 
@@ -107,7 +108,7 @@ Validar comportamento ao enviar campos vazios
 ## ⚠️ Senha inválida
 
 **Objetivo:**  
-Validar regras mínimas de senha (se aplicável)
+Validar o comportamento da API ao informar uma senha fora de um padrão mínimo esperado.
 
 **Dados de teste:**
 ```json
@@ -120,8 +121,9 @@ Validar regras mínimas de senha (se aplicável)
 
 **Passos:**
 1. Enviar requisição POST `/auth/register`
-2. Informar senha fora do padrão
+2. Informar senha fora do padrão esperado
 
 **Resultado esperado:**
-- Status 400
-- Mensagem informando regra de senha inválida
+- Comportamento atual: cadastro permitido (sem validação de regras de senha)
+- Observação: a API não possui validação de complexidade de senha implementada
+- Sugestão de melhoria: implementar regras mínimas de senha (ex: tamanho mínimo, combinação de caracteres)
