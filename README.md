@@ -1,6 +1,6 @@
 # 🧪 SmartTasks - Testes de API
 
-Projeto de testes manuais e de API para o sistema **SmartTasks**, com foco na validação de funcionalidades, regras de negócio e autenticação.
+Projeto de testes manuais e de API para o sistema **SmartTasks**, com foco na validação de funcionalidades, regras de negócio e autenticação, utilizando Postman.
 
 ---
 
@@ -23,6 +23,7 @@ Garantir a qualidade das funcionalidades do sistema SmartTasks por meio de teste
 
 - Cadastro de usuário (`POST /auth/register`)
 - Login (`POST /auth/login`)
+- Teste de disponibilidade da API (`GET /test`)
 - Validação de autenticação com JWT
 - Testes positivos (fluxos válidos)
 - Testes negativos (erros e exceções)
@@ -41,53 +42,71 @@ smarttasks-tests/
     ├── login.md
     └── register.md
 ```
+---
 
 ## 🧪 Casos de Teste
+
+### 🧪 Teste de disponibilidade da API
+
+**Objetivo:**  
+Validar se a API está respondendo corretamente.
+
+**Passos:**
+1. Enviar requisição **GET** `/test`
+
+**Resultado esperado:**
+- Status 200 (OK)
+- Retorno "API OK!"
+
+---
 
 ### 🔐 Login com sucesso
 
 **Objetivo:**  
-Validar se o usuário consegue realizar login com credenciais válidas
+Validar se o usuário consegue realizar login com credenciais válidas.
 
 **Pré-condição:**  
-Usuário previamente cadastrado
+Usuário previamente cadastrado.
 
 **Passos:**
-1. Enviar requisição POST `/auth/login`
+1. Enviar requisição **POST** `/auth/login`
 2. Informar email válido
 3. Informar senha correta
 
-**Resultado esperado:**  
-Retorno de token JWT e status 200
+**Resultado esperado:**
+- Status 200 (OK)
+- Retorno de token JWT
 
 ---
 
 ### ❌ Login com senha inválida
 
 **Objetivo:**  
-Validar comportamento do sistema ao informar senha incorreta
+Validar comportamento do sistema ao informar senha incorreta.
 
 **Passos:**
-1. Enviar requisição POST `/auth/login`
+1. Enviar requisição **POST** `/auth/login`
 2. Informar email válido
 3. Informar senha incorreta
 
-**Resultado esperado:**  
-Mensagem de erro e status 401 ou 403
+**Resultado esperado:**
+- Status 401 (Unauthorized)
+- Mensagem informando credenciais inválidas
 
 ---
 
 ### 🆕 Cadastro de usuário
 
 **Objetivo:**  
-Validar criação de novo usuário
+Validar criação de novo usuário.
 
 **Passos:**
-1. Enviar requisição POST `/auth/register`
-2. Informar nome, email e senha
+1. Enviar requisição **POST** `/auth/register`
+2. Informar nome, email e senha válidos
 
-**Resultado esperado:**  
-Cadastro realizado com sucesso e status 200
+**Resultado esperado:**
+- Status 201 (Created)
+- Cadastro realizado com sucesso.
 
 ---
 
@@ -116,6 +135,17 @@ Para acessar endpoints protegidos, incluir no header:
 ```text
 Authorization: Bearer {token}
 ```
+
+---
+
+## 🧠 Considerações
+
+Durante os testes, foi identificado que:
+
+- A API não valida formato de email
+- A API não possui validação de complexidade de senha
+
+Esses pontos foram registrados como oportunidades de melhoria.
 
 ---
 
